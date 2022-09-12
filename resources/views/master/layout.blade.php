@@ -22,10 +22,10 @@
                         <a class="nav-link" href="{{route('home')}}">home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('quemsomos')}}">Quem somos</a>
+                        <a class="nav-link" href="{{route('quem-somos')}}">Quem somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{route('contato')}}">contato</a>
+                        <a class="nav-link" aria-current="page" href="{{route('contato-enviar')}}">contato</a>
                     </li>
                     
                 </ul>

@@ -1,6 +1,7 @@
 <?php
 
-use app\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContatoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,11 +19,21 @@ use Illuminate\Support\Facades\Route;
     return view('home');
 })->name('home');*/
 
-Route::get('/contato', function () {
+/*Route::get('/contato', function () {
     return view('contato');
 })->name('contato');;
 Route::get('/quem_somos', function () {
     return view('quem_somos');
 })->name('quemsomos');;
 
-    Route::resource('/', [ContactController::class, 'index']);
+Route::resource('/', [ContactController::class, 'index']);*/
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('/quem-somos', 'quemsomos')->name('quem-somos');
+});
+
+Route::controller(ContatoController::class)->group(function () {
+    Route::get('/contato', 'index')->name('contato');
+    Route::post('/contato', 'enviar')->name('contato-enviar');
+});

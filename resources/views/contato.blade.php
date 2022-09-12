@@ -1,7 +1,8 @@
 @extends('master.layout')
 
 @section('content')
-<form action="{{ url ('/') }} " method="POST">
+<form action=" {{route('contato')}}" method="POST">
+  {{ csrf_field() }}
     <div class="container py-2">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
@@ -22,6 +23,7 @@
         <input class="btn btn-primary " type="submit" value="Submit">
     </div>
 </form>
+
 @if(count($errors)>0)
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Preencha os dados corretamente</strong> 
@@ -33,6 +35,7 @@
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
+
 @if($message = Session::get('success'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Obrigado!</strong> {{ $message }}
