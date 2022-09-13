@@ -40,10 +40,10 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $request->validade([
-            'nome' => 'required',
-            'email' => 'required|enail',
-            'assunto' => 'required',
-            'textarea' => 'required',
+            'nome' => 'required|string|max:256|mix:3',
+            'email' => 'required|email',
+            'assunto' => 'required|max:256',
+            'textarea' => 'max:512',
         ]); 
         $data = array(
             'nome' => $request->nome,
