@@ -3,6 +3,7 @@
 @section('content')
 
 <h1 CLASS="d-flex justify-content-center mt-5">SITE VOLTADO PARA APREENDER A USAR LARAVEL</h1>
+    
     @if((date('H') >= 0 && date('H') <= 12))
     <p class="d-flex justify-content-center">Bom Dia!</p>
     @elseif((date('H') >= 13 && date('H') <= 18))

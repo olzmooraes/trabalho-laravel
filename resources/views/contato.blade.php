@@ -1,8 +1,11 @@
 @extends('master.layout')
 
 @section('content')
+
 <form action=" {{route('contato')}}" method="POST">
+
   {{ csrf_field() }}
+
     <div class="container py-2">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
